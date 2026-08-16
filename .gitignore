@@ -1,0 +1,16 @@
+# Godot 4
+.godot/
+.import/
+export_presets.cfg
+
+# Mono/.NET
+.mono/
+data_*/
+mono_crash.*.json
+
+# Visual Studio
+.vs/
+bin/
+obj/
+*.user
+*.suo

@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dymtnjwhll348"]
+
+[ext_resource type="Script" uid="uid://dexet3vqfyhuc" path="res://Scenes/User Interface/Game Over/Scripts/GameOver.cs" id="1_140xi"]
+[ext_resource type="Script" uid="uid://c77c06ufncufc" path="res://Scenes/User Interface/Game Over/Scripts/RestartButton.cs" id="1_jf08n"]
+[ext_resource type="FontFile" uid="uid://bi6r3arbx6ahh" path="res://Scenes/User Interface/Minecraft.ttf" id="2_4b8vp"]
+[ext_resource type="Script" uid="uid://df8wtfk7ytn6w" path="res://Scenes/User Interface/Game Over/Scripts/QuitButton.cs" id="4_4b8vp"]
+
+[node name="GameOver" type="Control" unique_id=1946329635]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=790748757 groups=["Game Over"]]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_140xi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1134588602]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=478259799]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_4b8vp")
+theme_override_font_sizes/normal_font_size = 41
+text = "GAME OVER"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer" unique_id=1593213978]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 18
+
+[node name="RestartButton" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer" unique_id=1514212383]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_4b8vp")
+theme_override_font_sizes/font_size = 30
+text = "REINICIAR"
+script = ExtResource("1_jf08n")
+
+[node name="QuitButton" type="Button" parent="CenterContainer/VBoxContainer/VBoxContainer" unique_id=2060994561]
+process_mode = 3
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_4b8vp")
+theme_override_font_sizes/font_size = 30
+text = "SAIR"
+script = ExtResource("4_4b8vp")
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/RestartButton" to="CenterContainer/VBoxContainer/VBoxContainer/RestartButton" method="OnPressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/VBoxContainer/QuitButton" to="CenterContainer/VBoxContainer/VBoxContainer/QuitButton" method="OnPressed"]

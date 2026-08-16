@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cd24efaca4ai0"]
+
+[ext_resource type="Texture2D" uid="uid://coyxopscfq05o" path="res://Scenes/Background/Assets/BG.png" id="1_xgg7f"]
+[ext_resource type="Texture2D" uid="uid://c6tounu5p8t1" path="res://Scenes/Background/Assets/BGMountains.png" id="2_bgfm1"]
+[ext_resource type="Texture2D" uid="uid://3lpymbwsvrva" path="res://Scenes/Background/Assets/BGTrees.png" id="3_bgfm1"]
+
+[node name="Background" type="Node2D" unique_id=775528097]
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1798365113]
+texture_filter = 1
+scroll_scale = Vector2(0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=544458990]
+texture_filter = 1
+position = Vector2(639, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("1_xgg7f")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1371591187]
+texture_filter = 1
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(1479, 0)
+autoscroll = Vector2(-90, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1620222542]
+texture_filter = 1
+position = Vector2(735, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("2_bgfm1")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=504938982]
+texture_filter = 1
+scroll_scale = Vector2(0, 0)
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-360, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=917903118]
+texture_filter = 1
+position = Vector2(639, 360)
+scale = Vector2(3, 3)
+texture = ExtResource("3_bgfm1")

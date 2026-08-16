@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cj6i12x6igpjq"]
+
+[ext_resource type="AudioStream" uid="uid://7io8r1npobj6" path="res://Scenes/nathanielthomasbrack-8-bit-loop-189494.mp3" id="1_pu4hd"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer2D" unique_id=167814429]
+process_mode = 3
+stream = ExtResource("1_pu4hd")
+volume_db = -7.879
+autoplay = true
+parameters/looping = true

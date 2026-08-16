@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bw6ce40tley3f"]
+
+[ext_resource type="Script" uid="uid://io6lbpyxsy4e" path="res://Scenes/User Interface/Credits.cs" id="1_0gbtq"]
+[ext_resource type="FontFile" uid="uid://bi6r3arbx6ahh" path="res://Scenes/User Interface/Minecraft.ttf" id="1_vt3o3"]
+
+[node name="Credits" type="ScrollContainer" unique_id=1116678624]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+script = ExtResource("1_0gbtq")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1674844662]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=1679522982]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_vt3o3")
+theme_override_fonts/bold_font = ExtResource("1_vt3o3")
+bbcode_enabled = true
+text = "[center]
+[font_size=42][b][wave amp=15 freq=2]WHITE FALCON[/wave][/b][/font_size]
+
+[font_size=18][color=#CCCCCC]CREDITOS[/color][/font_size]
+[/center]
+
+
+[center][color=#888888]─────────────────────────────[/color][/center]
+
+
+[center][font_size=22][color=#4FC3F7][b]PROGRAMAÇÃO[/b][/color][/font_size][/center]
+[center]FELIPE TRINDADE
+[/center]
+
+
+[center][font_size=22][color=#4FC3F7][b]ARTE E DESIGN VISUAL[/b][/color][/font_size][/center]
+[center]FELIPE TRINDADE[/center]
+
+
+[center][color=#888888]─────────────────────────────[/color][/center]
+
+
+[center][font_size=22][color=#FF7043][b]AGRADECIMENTOS ESPECIAIS[/b][/color][/font_size][/center]
+[center]Principal gametester - Feniks
+Dicas artísticas - Garedeus
+Artistas dos quais as artes eu usei de inspiração:
+ma9ici4n
+nurapixel
+E um agradecimento às comunidades do Reddit e do GitHub que me ajudaram com resoluções de bugs
+[/center]
+
+[center][font_size=22][color=#FF7043][b]FERRAMENTAS UTILIZADAS[/b][/color][/font_size][/center]
+[center]Godot Engine 4
+Visual Studio Community
+Aseprite[/center]
+
+
+[center][font_size=22][color=#FF7043][b]ASSETS DE TERCEIROS[/b][/color][/font_size]
+FONTE — Craftron Gaming
+MÚSICA DE FUNDO - NathanielThomasBrack
+SOM DE PONTUAÇÃO - freesound_community
+SOM DE COLISÃO - freesound_community
+BATER DE ASAS DO PÁSSARO - freesound_community
+
+DISPONÍVEIS EM DAFONT E PIXABAY[/center]
+
+
+[center][color=#888888]─────────────────────────────[/color][/center]
+
+
+[center][font_size=20][b]OBRIGADO POR JOGAR![/b][/font_size]
+
+[color=#AAAAAA]Acompanhe o desenvolvimento em:[/color]
+itch.io/seu-usuario
+github.com/CptTrinity[/center]"
+fit_content = true
+scroll_active = false

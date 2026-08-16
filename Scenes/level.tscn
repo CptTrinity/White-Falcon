@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dyrqri0bgfaun"]
+
+[ext_resource type="Script" uid="uid://cflcw5agw2y3y" path="res://Scenes/Level.cs" id="1_81xng"]
+[ext_resource type="PackedScene" uid="uid://d2cuvm6nguveq" path="res://Scenes/Tubes/tubes.tscn" id="2_81xng"]
+[ext_resource type="PackedScene" uid="uid://hiba1k87c8hq" path="res://Scenes/Player/player.tscn" id="3_0f350"]
+[ext_resource type="PackedScene" uid="uid://dymtnjwhll348" path="res://Scenes/User Interface/Game Over/game_over.tscn" id="3_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://bttjjv4vvc5rj" path="res://Scenes/User Interface/Score/score.tscn" id="4_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://bw6ce40tley3f" path="res://Scenes/User Interface/credits.tscn" id="4_754fn"]
+[ext_resource type="PackedScene" uid="uid://cd24efaca4ai0" path="res://Scenes/Background/background.tscn" id="6_0f350"]
+[ext_resource type="PackedScene" uid="uid://br5enuks55dlx" path="res://Scenes/User Interface/Main Menu/main_menu.tscn" id="7_8c0lf"]
+
+[node name="Level" type="Node2D" unique_id=725464328]
+script = ExtResource("1_81xng")
+Tube = ExtResource("2_81xng")
+GameOver = ExtResource("3_8c0lf")
+Credits = ExtResource("4_754fn")
+MainMenu = ExtResource("7_8c0lf")
+
+[node name="Background" parent="." unique_id=775528097 instance=ExtResource("6_0f350")]
+
+[node name="Player" parent="." unique_id=846687094 instance=ExtResource("3_0f350")]
+position = Vector2(189, 393)
+
+[node name="TubeSpawnTimer" type="Timer" parent="." unique_id=554771272]
+wait_time = 2.0
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1530283225]
+
+[node name="Score" parent="CanvasLayer" unique_id=1190349558 instance=ExtResource("4_8c0lf")]
+offset_top = 11.0
+offset_bottom = 11.0
+
+[node name="Credits" type="Control" parent="CanvasLayer" unique_id=816860730]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenu" parent="CanvasLayer" unique_id=400832832 instance=ExtResource("7_8c0lf")]
+
+[node name="Tubes" type="Node2D" parent="." unique_id=123589976]
+
+[connection signal="timeout" from="TubeSpawnTimer" to="." method="OnTubeSpawnTimerTimeout"]

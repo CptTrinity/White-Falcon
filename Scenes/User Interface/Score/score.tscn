@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bttjjv4vvc5rj"]
+
+[ext_resource type="Script" uid="uid://6tk4iewwwbha" path="res://Scenes/User Interface/Score/Scripts/RichTextLabel.cs" id="1_t1x8i"]
+[ext_resource type="FontFile" uid="uid://bi6r3arbx6ahh" path="res://Scenes/User Interface/Minecraft.ttf" id="1_t3sch"]
+
+[node name="Score" type="Control" unique_id=1190349558]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1512378956]
+layout_mode = 0
+offset_right = 146.0
+offset_bottom = 52.0
+theme_override_constants/margin_left = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer" unique_id=373406804 groups=["score"]]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_t3sch")
+theme_override_font_sizes/normal_font_size = 35
+text = "PONTUACAO:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 8
+script = ExtResource("1_t1x8i")

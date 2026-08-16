@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://hiba1k87c8hq"]
+
+[ext_resource type="Script" uid="uid://b2tfngjvw8fia" path="res://Scenes/Player/Scripts/Player.cs" id="1_gntrk"]
+[ext_resource type="Texture2D" uid="uid://dubumqdojp870" path="res://Scenes/Player/Assets/WhiteBird1.png" id="2_a3d8c"]
+[ext_resource type="Texture2D" uid="uid://chleyad6th5ta" path="res://Scenes/Player/Assets/WhiteBird2.png" id="3_xpcdj"]
+[ext_resource type="AudioStream" uid="uid://uma5rpjvjbc3" path="res://Scenes/Player/Assets/freesound_community-8-bit-explosion-95847.mp3" id="4_mtuoh"]
+[ext_resource type="AudioStream" uid="uid://bh8xuss2buc40" path="res://Scenes/Player/Assets/freesound_community-flapping-39306-8bit.mp3" id="5_htcer"]
+
+[sub_resource type="Animation" id="Animation_mtuoh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_xpcdj")]
+}
+
+[sub_resource type="Animation" id="Animation_htcer"]
+resource_name = "flap"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_a3d8c"), ExtResource("3_xpcdj")]
+}
+
+[sub_resource type="Animation" id="Animation_xpcdj"]
+resource_name = "flapSlower"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_a3d8c"), ExtResource("3_xpcdj")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dd0ac"]
+_data = {
+&"RESET": SubResource("Animation_mtuoh"),
+&"flap": SubResource("Animation_htcer"),
+&"flapSlower": SubResource("Animation_xpcdj")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2wxux"]
+radius = 13.0
+height = 42.0
+
+[node name="Player" type="CharacterBody2D" unique_id=846687094]
+process_mode = 3
+collision_mask = 2
+script = ExtResource("1_gntrk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=226514389]
+texture_filter = 1
+position = Vector2(-3, 0)
+scale = Vector2(3, 3)
+texture = ExtResource("3_xpcdj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D" unique_id=2128636295]
+libraries/ = SubResource("AnimationLibrary_dd0ac")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=868097251]
+position = Vector2(0, -1)
+rotation = -1.5707964
+shape = SubResource("CapsuleShape2D_2wxux")
+
+[node name="CollisionSound" type="AudioStreamPlayer2D" parent="." unique_id=1019206931]
+process_mode = 3
+stream = ExtResource("4_mtuoh")
+volume_db = -6.0
+
+[node name="FlappingSound" type="AudioStreamPlayer2D" parent="." unique_id=1193523677]
+stream = ExtResource("5_htcer")

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://c7vwldgfgtnmy"]
+
+[ext_resource type="Script" uid="uid://6b2bg61lukfu" path="res://Scenes/User Interface/Score/Scripts/NewHighscore.cs" id="1_1vsf2"]
+[ext_resource type="FontFile" uid="uid://bi6r3arbx6ahh" path="res://Scenes/User Interface/Minecraft.ttf" id="1_dhnjd"]
+
+[node name="NewHighscore" type="Control" unique_id=1229217709]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1836087652]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -25.0
+offset_right = 100.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=1226204836]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+layout_direction = 2
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer" unique_id=1744953974]
+process_mode = 3
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_dhnjd")
+theme_override_font_sizes/normal_font_size = 35
+text = "NOVO HIGHSCORE: 0"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_1vsf2")
