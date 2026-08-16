@@ -1,6 +1,6 @@
 # License
 
-Copyright (c) 2026 [Felipe Trindade]. All rights reserved.
+Copyright (c) 2026 Felipe Trindade. All rights reserved.
 
 ## Code and Artwork
 The source code, game design, and all visual assets (artwork, animations, UI) are the exclusive property of the author. 
