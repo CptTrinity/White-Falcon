@@ -23,7 +23,7 @@ layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_vt3o3")
 theme_override_fonts/bold_font = ExtResource("1_vt3o3")
 bbcode_enabled = true
-text = "[center]
+text = "  [center]
 [font_size=42][b][wave amp=15 freq=2]WHITE FALCON[/wave][/b][/font_size]
 
 [font_size=18][color=#CCCCCC]CREDITOS[/color][/font_size]
