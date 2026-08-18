@@ -9,6 +9,7 @@ data_*/
 mono_crash.*.json
 
 # Visual Studio
+.vscode/
 .vs/
 bin/
 obj/
